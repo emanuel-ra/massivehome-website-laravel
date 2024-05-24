@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('model');
-            $table->string('description');
-            $table->string('image_url');
+            $table->string('model')->nullable();
+            $table->string('description')->nullable();
+            $table->string('image_url')->nullable();
             $table->decimal('market_price', total: 8, places: 2);
             $table->decimal('wholesale_price', total: 8, places: 2);
             $table->decimal('member_price', total: 8, places: 2);
@@ -26,8 +26,8 @@ return new class extends Migration
             $table->decimal('premium_price', total: 8, places: 2);
             $table->decimal('plus_price', total: 8, places: 2);
             $table->enum('status', ['enable', 'disable', 'deleted']);
-            $table->integer('external_id');
-            $table->unsignedSmallInteger('brand_id');
+            $table->integer('external_id')->nullable();
+            $table->unsignedSmallInteger('brand_id')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', precision: 0);
         });
