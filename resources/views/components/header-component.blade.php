@@ -1,4 +1,4 @@
-<div class="border-b max-w-[1920px] m-auto" >
+<div class="border-b max-w-[1920px] m-auto relative " >
     <header class="flex w-full items-center justify-between px-10 py-5">
 
         <a href="{{ route('home')}}">
@@ -8,19 +8,15 @@
         <!-- DESKTOP MENU -->
         <nav class="hidden lg:flex ">
             <ul class="uppercase font-semibold flex gap-x-5 ">
-                @foreach ($menu as $item)
-                    <li>
-                        @if ($item["type"]==='navigation')
-                            <a href="{{route($item["route"])}}" class="">{{__($item["label"])}}</a>
-                        @else
-                            <button class="uppercase">{{__($item["label"])}}</button>
-                        @endif
-
-                    </li>
-                @endforeach
+                <a href="{{route('home')}}" class="">{{__('new')}}</a>
+                <button onclick="toggleCategoryContainer()" class="uppercase">{{__('categories')}}</button>
+                <a href="{{route('test')}}" class="">{{__('branches')}}</a>
+                <a href="{{route('test')}}" class="">{{__('liquidations')}}</a>
             </ul>
 
         </nav>
+
+
 
         <nav class="flex gap-5">
             <a href="{{route('home')}}">
@@ -53,6 +49,6 @@
 
     </header>
 
-
+    <x-menu-categories-component />
 
 </div>

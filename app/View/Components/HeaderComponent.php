@@ -30,6 +30,6 @@ class HeaderComponent extends Component
             ['label' => 'branches', 'type' => 'navigation', 'route' => 'test', 'children' => array()],
             ['label' => 'liquidations', 'type' => 'navigation', 'route' => 'test', 'children' => array()],
         );
-        return view('components.header-component', ['menu' => $menu]);
+        return view('components.header-component');
     }
 }

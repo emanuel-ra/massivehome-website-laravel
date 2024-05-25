@@ -21,8 +21,13 @@ class Category extends Model
     /**
      * Get the child categories.
      */
-    public function children()
+    public function sub()
     {
         return $this->hasMany(Category::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->sub()->with('children');
     }
 }
