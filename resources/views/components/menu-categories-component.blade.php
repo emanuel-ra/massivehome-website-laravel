@@ -23,7 +23,7 @@
             <ul class="capitalize flex flex-col gap-y-2 text-slate-800 ">
                 @foreach ($categories as $catagory)
                     <li class="group hover:bg-white transition">
-                        <a aria-label="{{$catagory["name"]}}" href="" class="px-4 flex justify-between">
+                        <a aria-label="{{$catagory["name"]}}" href="" class="px-4 flex justify-between hover:text-red-600 hover:font-semibold transition ease-in-out">
                             {{$catagory["name"]}}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 hidden group-hover:block transition">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -32,10 +32,10 @@
 
                         @if (count($catagory['children']))
 
-                                <div class="absolute -right-[800px] top-[20%] bg-[#F5F5F5] h-[600px] w-[800px] border p-10  flex-wrap gap-x-4 overflow-y-auto hidden group-hover:flex transition ease-in-out delay-300">
+                                <div class="absolute -right-[800px] top-[20%] bg-white h-[600px] w-[800px] border p-10  flex-wrap gap-x-4 overflow-y-auto hidden group-hover:flex transition ease-in-out delay-300">
                                     @foreach ($catagory['children'] as $child)
                                         <div class="grow">
-                                            <div class="border-b-2 py-2 font-semibold text-slate-600 hover:text-slate-950 transition">
+                                            <div class="border-b-2 py-2 font-semibold text-slate-600 hover:text-slate-950 hover:text-red-600 hover:font-semibold transition">
                                                 <a href="">{{$child["name"]}}</a>
                                             </div>
                                             <div class="">
@@ -43,7 +43,7 @@
                                                     <ul>
                                                         @foreach ($child["children"] as $grandchildren)
                                                             <li>
-                                                                <a href="">{{$grandchildren['name']}}</a>
+                                                                <a class="hover:text-red-600 hover:font-semibold transition" href="">{{$grandchildren['name']}}</a>
                                                             </li>
                                                         @endforeach
                                                     </ul>
