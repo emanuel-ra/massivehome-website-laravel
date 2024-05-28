@@ -32,10 +32,10 @@
 
                         @if (count($catagory['children']))
 
-                                <div class="absolute -right-[800px] top-[20%] bg-white h-[600px] w-[800px] border p-10  flex-wrap gap-x-4 overflow-y-auto hidden group-hover:flex transition ease-in-out delay-300">
+                                <div class="absolute -right-[800px] top-[20%] bg-white h-[600px] w-[800px] border p-10  gap-x-4 overflow-y-auto hidden group-hover:grid grid-cols-3 transition ease-in-out delay-300">
                                     @foreach ($catagory['children'] as $child)
-                                        <div class="grow">
-                                            <div class="border-b-2 py-2 font-semibold text-slate-600 hover:text-slate-950 hover:text-red-600 hover:font-semibold transition">
+                                        <div>
+                                            <div class="border-b-2 py-2 font-semibold text-slate-600 hover:text-red-600 hover:font-semibold transition">
                                                 <a href="">{{$child["name"]}}</a>
                                             </div>
                                             <div class="">
@@ -57,8 +57,6 @@
 
                     </li>
                     {{-- CHILDREN --}}
-
-
 
                 @endforeach
             </ul>
