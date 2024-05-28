@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes translateXAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%); /* Move it across the viewport width */
+    }
+}
+
+.box-header-message {
+    position: relative;
+    animation: translateXAnimation 10s linear infinite;
+}
