@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/vivimxhome/public_html/
-    - /bin/cp -r /home/vivimxhome/repositories/massivehome-website/ $DEPLOYPATH
+    - /bin/cp -r /home/vivimxhome/repositories/massivehome-website/* $DEPLOYPATH
